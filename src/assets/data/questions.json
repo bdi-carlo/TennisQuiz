@@ -1,0 +1,49 @@
+{"quiz":{
+		"questions":[
+			{
+				"question": "Combien de victoires en Grand Chelem l’Américain Pete Sampras détient-il ?",
+				"choix":[
+					{"answer": 12},
+					{"answer": 13},
+					{"answer": 14},
+					{"answer": 15}
+				],
+				"good": 2,
+				"done": -1
+			},
+			{
+				"question": "Qui était Roland Garros ?",
+				"choix":[
+					{"answer": "Un navigateur"},
+					{"answer": "Un aviateur"},
+					{"answer": "Un pilote"},
+					{"answer": "Le premier tennisman professionnel français"}
+				],
+				"good": 1,
+				"done": -1
+			},
+			{
+				"question": "En finale de quel tournoi du Grand Chelem le Suédois Björn Borg a-t-il échoué à six reprises ?",
+				"choix":[
+					{"answer": "Wimbledon"},
+					{"answer": "Roland Garros"},
+					{"answer": "US Open"},
+					{"answer": "Open d'Australie"}
+				],
+				"good": 2,
+				"done": -1
+			},
+			{
+				"question": "Quelle joueuse est restée plus de 180 semaines consécutives en première position du classement mondial de tennis féminin ?",
+				"choix":[
+					{"answer": "Christ Evert"},
+					{"answer": "Steffi Graf"},
+					{"answer": "Amélie Mauresmo"},
+					{"answer": "Serene Williams"}
+				],
+				"good": 1,
+				"done": -1
+			}
+		]
+	}
+}

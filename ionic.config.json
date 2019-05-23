@@ -1,0 +1,7 @@
+{
+  "name": "TennisQuiz",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
