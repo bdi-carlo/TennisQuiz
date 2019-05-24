@@ -10,10 +10,13 @@ import { NavController } from '@ionic/angular';
 export class HomePage {
   //questionPage: QuestionPage;
 
-  constructor(public navCtrl: NavController){}
+  constructor(private navCtrl: NavController){}
 
   openQuestion(){
-    console.log("Enter in function: openQuestion()");
     this.navCtrl.navigateForward('/question');
+  }
+
+  openAjout(){
+    this.navCtrl.navigateForward('/ajout');
   }
 }

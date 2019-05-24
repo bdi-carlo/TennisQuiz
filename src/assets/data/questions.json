@@ -43,6 +43,39 @@
 				],
 				"good": 1,
 				"done": -1
+			},
+			{
+				"question": "Quel était le classement de Richard Gasquet à 15 ans ?",
+				"choix":[
+					{"answer": "4/6"},
+					{"answer": "2/6"},
+					{"answer": "-4/6"},
+					{"answer": "-15"}
+				],
+				"good": 3,
+				"done": -1
+			},
+			{
+				"question": "Quel joueur du circuit masculin était surnommé El Mago ?",
+				"choix":[
+					{"answer": "Marcelo Rios"},
+					{"answer": "Guillermo Coria"},
+					{"answer": "Alberto Mancini"},
+					{"answer": "David Nalbandian"}
+				],
+				"good": 1,
+				"done": -1
+			},
+			{
+				"question": "Lequel de ces joueurs n'a jamais été n°1 mondial ?",
+				"choix":[
+					{"answer": "Thomas Muster"},
+					{"answer": "Michaël Chang"},
+					{"answer": "Patrick Rafter"},
+					{"answer": "Juan Carlos Ferrero"}
+				],
+				"good": 1,
+				"done": -1
 			}
 		]
 	}

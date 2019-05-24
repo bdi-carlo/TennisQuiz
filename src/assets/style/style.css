@@ -1,0 +1,21 @@
+.bChoice{
+  height: 60px;
+}
+
+.lCorrect{
+  margin: auto;
+}
+
+.bNext{
+  display: inline-block;
+  text-align: center;
+}
+
+.lEntitled{
+  margin: auto;
+  margin-top: 50px;
+}
+
+.rowChoice1{
+  margin-top: 40px;
+}
