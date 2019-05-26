@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-question',
   templateUrl: './question.page.html',
@@ -10,33 +12,52 @@ export class QuestionPage implements OnInit {
 
   datasTxt: any;
   datasJson: any;
+  test: any;
   entitled: string;
   choices: any;
   good: number;
   isCorrect: string = "REPONDRE";
   isDisabled: boolean = false;
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private http: HttpClient, private navCtrl: NavController) { }
 
   ngOnInit() {
-    this.datasTxt = '{"quiz":{"questions":[{"question": "Combien de victoires en Grand Chelem l’Américain Pete Sampras détient-il ?","choix":[{"answer": 12},{"answer": 13},{"answer": 14},{"answer": 15}],"good": 2,"done": -1},{"question": "ComWESH ?","choix":[{"answer": 12},{"answer": 13},{"answer": 14},{"answer": 15}],"good": 0,"done": -1}]}}';
-    this.datasJson = JSON.parse(this.datasTxt);
+    //this.datasTxt = '{"quiz":{"questions":[{"question": "Combien de victoires en Grand Chelem l’Américain Pete Sampras détient-il ?","choix":[{"answer": 12},{"answer": 13},{"answer": 14},{"answer": 15}],"good": 2,"done": -1},{"question": "ComWESH ?","choix":[{"answer": 12},{"answer": 13},{"answer": 14},{"answer": 15}],"good": 0,"done": -1}]}}';
+    //this.datasJson = JSON.parse(this.datasTxt);
 
     this.chooseQuestion();
+    console.log(this.good);
+    var myStorage = window.localStorage;
+
+    console.log(myStorage.getItem('myCat'));
+
+    myStorage.setItem('myCat', 'Tom');
+
+
   }
 
   /**
    * Choose a random question among the list of questions
   **/
   chooseQuestion(){
-    var randIndex = Math.floor(Math.random() * this.datasJson.quiz.questions.length);
-    var question = this.datasJson.quiz.questions[randIndex];
+    interface Response{
+      quiz:{
+        questions: Array<any>;
+      }
+    }
+    this.http.get<Response>('../assets/data/questions.json').subscribe(data => {
+      console.log(data);
 
-    this.entitled = question.question;
-    this.choices = question.choix;
-    this.good = question.good;
-    this.isDisabled = false;
-    this.isCorrect = "REPONDRE";
+      var randIndex = Math.floor(Math.random() * data.quiz.questions.length);
+      var question = data.quiz.questions[randIndex];
+
+      this.entitled = question.question;
+      this.choices = question.choix;
+      this.good = question.good;
+      this.isDisabled = false;
+      this.isCorrect = "REPONDRE";
+    });
+    //console.log(this.good);
   }
 
   /**
