@@ -16,6 +16,7 @@ export class QuestionPage implements OnInit {
   isDisabled: boolean = false;
   indexQuestion: number;
   myStorage: any;
+  goodDone: any = {"good": 0, "done": 0};
 
   constructor(private navCtrl: NavController) { }
 
@@ -28,6 +29,8 @@ export class QuestionPage implements OnInit {
   // Save datas when leaving the page
   ngOnDestroy(){
     this.myStorage.setItem("datas", JSON.stringify(this.datasJson));
+    this.myStorage.setItem("perc", Math.round((this.goodDone.done/this.datasJson.quiz.questions.length)*100).toString());
+    this.myStorage.setItem("goodDone", JSON.stringify(this.goodDone));
   }
 
   /**
@@ -35,6 +38,7 @@ export class QuestionPage implements OnInit {
   **/
   getDatas(){
     this.datasJson = JSON.parse(this.myStorage.getItem("datas"));
+    this.goodDone = JSON.parse(this.myStorage.getItem("goodDone"));
   }
 
   /**
@@ -65,8 +69,17 @@ export class QuestionPage implements OnInit {
    * param (number) index: Index of the answer to check
   **/
   checkAnswer(index){
-    (index == this.good) ? this.isCorrect = "VRAI" : this.isCorrect="FAUX";
-    (index == this.good) ? this.datasJson.quiz.questions[this.indexQuestion].done = 1 : this.datasJson.quiz.questions[this.indexQuestion].done = 0;
+    if(index == this.good){
+      this.isCorrect = "VRAI";
+      this.datasJson.quiz.questions[this.indexQuestion].done = 1;
+      this.goodDone.good++;
+    }
+    else{
+      this.isCorrect="FAUX";
+      this.datasJson.quiz.questions[this.indexQuestion].done = 0;
+    }
+
+    this.goodDone.done++;
     this.checkGameFinished();
     this.isDisabled = true;
   }

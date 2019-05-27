@@ -7,7 +7,9 @@
 </ion-header>
 
 <ion-content padding color="light">
-  <ion-progress-bar value="{{perc}}"></ion-progress-bar>
+  <p>{{goodDone.good}}/{{goodDone.done}} bonnes  réponses</p>
+  <p>{{perc}} % terminé</p>
+  <ion-progress-bar value="{{perc/100}}"></ion-progress-bar>
   <ion-button expand="block" fill="full" (click)="openQuestion()">JOUER</ion-button>
   <ion-button expand="block" fill="full" (click)="openAjout()">AJOUTER QUESTION</ion-button>
   <ion-button expand="block" fill="full" (click)="reset()">RESET</ion-button>
