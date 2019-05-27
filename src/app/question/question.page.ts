@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavController } from '@ionic/angular';
-
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-question',
@@ -10,63 +8,78 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuestionPage implements OnInit {
 
-  datasTxt: any;
   datasJson: any;
-  test: any;
   entitled: string;
   choices: any;
   good: number;
   isCorrect: string = "REPONDRE";
   isDisabled: boolean = false;
+  indexQuestion: number;
+  myStorage: any;
 
-  constructor(private http: HttpClient, private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
-    //this.datasTxt = '{"quiz":{"questions":[{"question": "Combien de victoires en Grand Chelem l’Américain Pete Sampras détient-il ?","choix":[{"answer": 12},{"answer": 13},{"answer": 14},{"answer": 15}],"good": 2,"done": -1},{"question": "ComWESH ?","choix":[{"answer": 12},{"answer": 13},{"answer": 14},{"answer": 15}],"good": 0,"done": -1}]}}';
-    //this.datasJson = JSON.parse(this.datasTxt);
-
+    this.myStorage = window.localStorage;
+    this.getDatas();
     this.chooseQuestion();
-    console.log(this.good);
-    var myStorage = window.localStorage;
+  }
 
-    console.log(myStorage.getItem('myCat'));
+  // Save datas when leaving the page
+  ngOnDestroy(){
+    this.myStorage.setItem("datas", JSON.stringify(this.datasJson));
+  }
 
-    myStorage.setItem('myCat', 'Tom');
-
-
+  /**
+   * Get datas from the window local storage
+  **/
+  getDatas(){
+    this.datasJson = JSON.parse(this.myStorage.getItem("datas"));
   }
 
   /**
    * Choose a random question among the list of questions
   **/
   chooseQuestion(){
-    interface Response{
-      quiz:{
-        questions: Array<any>;
-      }
+    if(this.datasJson.quiz.finished != -1){
+      console.log("Game finished");
     }
-    this.http.get<Response>('../assets/data/questions.json').subscribe(data => {
-      console.log(data);
+    else{
+      var randIndex;
+      do{
+        randIndex = Math.floor(Math.random() * this.datasJson.quiz.questions.length);
+      }while(this.datasJson.quiz.questions[randIndex].done != -1);
+      var question = this.datasJson.quiz.questions[randIndex];
 
-      var randIndex = Math.floor(Math.random() * data.quiz.questions.length);
-      var question = data.quiz.questions[randIndex];
-
+      this.indexQuestion = randIndex;
       this.entitled = question.question;
       this.choices = question.choix;
       this.good = question.good;
       this.isDisabled = false;
       this.isCorrect = "REPONDRE";
-    });
-    //console.log(this.good);
+    }
   }
 
   /**
-   * Check if the answer is good or not
+   * Check if the answer is good or not and save that the player answer to this question
    * param (number) index: Index of the answer to check
   **/
   checkAnswer(index){
     (index == this.good) ? this.isCorrect = "VRAI" : this.isCorrect="FAUX";
+    (index == this.good) ? this.datasJson.quiz.questions[this.indexQuestion].done = 1 : this.datasJson.quiz.questions[this.indexQuestion].done = 0;
+    this.checkGameFinished();
     this.isDisabled = true;
+  }
+
+  checkGameFinished(){
+    var isFinished = true;
+    for(let qst of this.datasJson.quiz.questions){
+      if(qst.done == -1){
+        isFinished = false;
+        break;
+      }
+    }
+    if(isFinished == true) this.datasJson.quiz.finished = 1;
   }
 
   /**

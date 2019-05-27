@@ -17,7 +17,7 @@
 					{"answer": "Un navigateur"},
 					{"answer": "Un aviateur"},
 					{"answer": "Un pilote"},
-					{"answer": "Le premier tennisman professionnel français"}
+					{"answer": "Le 1er tennisman pro français"}
 				],
 				"good": 1,
 				"done": -1
@@ -39,7 +39,7 @@
 					{"answer": "Christ Evert"},
 					{"answer": "Steffi Graf"},
 					{"answer": "Amélie Mauresmo"},
-					{"answer": "Serene Williams"}
+					{"answer": "Serena Williams"}
 				],
 				"good": 1,
 				"done": -1
@@ -77,6 +77,7 @@
 				"good": 1,
 				"done": -1
 			}
-		]
+		],
+		"finished": -1
 	}
 }
