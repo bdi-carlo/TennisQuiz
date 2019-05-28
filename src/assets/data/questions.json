@@ -76,6 +76,83 @@
 				],
 				"good": 1,
 				"done": -1
+			},
+			{
+				"question": "Face à quel joueur Wilander a-t-il remis une balle de match en 1/2 finale de Roland-Garros 1982 ?",
+				"choix":[
+					{"answer": "Vitas Gerulaitis"},
+					{"answer": "Victor Pecci"},
+					{"answer": "José Luis Clerc"},
+					{"answer": "Guillermo Vilas"}
+				],
+				"good": 2,
+				"done": -1
+			},
+			{
+				"question": "Quel est le dernier français à s'être imposé à Wimbledon ?",
+				"choix":[
+					{"answer": "Yvon Petra"},
+					{"answer": "Nicolas Mahut"},
+					{"answer": "René Lacoste"},
+					{"answer": "Gael Monfils"}
+				],
+				"good": 0,
+				"done": -1
+			},
+			{
+				"question": "Lequel de ces joueurs n'a pas remporté de titre sur toutes les surfaces ?",
+				"choix":[
+					{"answer": "Richard Gasquet"},
+					{"answer": "Lleyton Hewitt"},
+					{"answer": "Andy Roddick"},
+					{"answer": "David Nalbandian"}
+				],
+				"good": 3,
+				"done": -1
+			},
+			{
+				"question": "Quel joueur a remporté les 6 tournois majeurs (4 Grand Chelems, Master et JO) ?",
+				"choix":[
+					{"answer": "Rod Laver"},
+					{"answer": "Roger Federer"},
+					{"answer": "Andre Agassi"},
+					{"answer": "Rafael Nadal"}
+				],
+				"good": 2,
+				"done": -1
+			},
+			{
+				"question": "Lequel de ces joueurs a réalisé la plus longue série de victoire de l'histoire du tennis (74 victoires) ?",
+				"choix":[
+					{"answer": "Andre Agassi"},
+					{"answer": "Martina Navratilova"},
+					{"answer": "Roger Federer"},
+					{"answer": "Justine Henin"}
+				],
+				"good": 1,
+				"done": -1
+			},
+			{
+				"question": "Combien de victoire consécutives sur terre battue Rafael Nadal détient-il ?",
+				"choix":[
+					{"answer": "71"},
+					{"answer": "76"},
+					{"answer": "81"},
+					{"answer": "86"}
+				],
+				"good": 3,
+				"done": -1
+			},
+			{
+				"question": "Quel joueur s'est fait poignardé dans le dos ?",
+				"choix":[
+					{"answer": "Monica Seles"},
+					{"answer": "Thomas Berdych"},
+					{"answer": "Patrick Rafter"},
+					{"answer": "Venus Williams"}
+				],
+				"good": 0,
+				"done": -1
 			}
 		],
 		"finished": -1
