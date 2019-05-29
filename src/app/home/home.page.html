@@ -1,16 +1,16 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="primary">
     <ion-title>
       TennisQuiz
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding color="light">
+<ion-content padding color="dark">
   <p>{{goodDone.good}}/{{goodDone.done}} bonnes  réponses</p>
   <p>{{perc}} % terminé</p>
-  <ion-progress-bar value="{{perc/100}}"></ion-progress-bar>
-  <ion-button expand="block" fill="full" (click)="openQuestion()">JOUER</ion-button>
-  <ion-button expand="block" fill="full" (click)="openAjout()">AJOUTER QUESTION</ion-button>
-  <ion-button expand="block" fill="full" (click)="reset()">RESET</ion-button>
+  <ion-progress-bar color="tertiary" value="{{perc/100}}"></ion-progress-bar>
+  <ion-button color="danger" expand="full" (click)="openQuestion()">JOUER</ion-button>
+  <ion-button color="tertiary" expand="full" (click)="openAjout()">AJOUTER QUESTION</ion-button>
+  <ion-button color="danger" expand="full" (click)="reset()">RESET</ion-button>
 </ion-content>

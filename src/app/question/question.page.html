@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="primary">
     <ion-back-button slot="start"></ion-back-button>
     <ion-title>TennisQuiz</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding color="light">
-  <ion-grid>
+<ion-content color="dark">
 
+  <ion-grid class="grid1">
     <ion-row>
       <ion-label class="lCorrect">{{isCorrect}}</ion-label>
     </ion-row>
@@ -15,30 +15,20 @@
     <ion-row>
       <ion-label class="lEntitled">{{entitled}}</ion-label>
     </ion-row>
-
-    <ion-row class="rowChoice1">
-      <ion-col size="6">
-        <ion-button class="bChoice" expand="block" [disabled]="isDisabled" (click)="checkAnswer(0)">{{choices[0].answer}}</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button class="bChoice" expand="block" [disabled]="isDisabled" (click)="checkAnswer(1)">{{choices[1].answer}}</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button class="bChoice" expand="block" [disabled]="isDisabled" (click)="checkAnswer(2)">{{choices[2].answer}}</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button class="bChoice" expand="block" [disabled]="isDisabled" (click)="checkAnswer(3)">{{choices[3].answer}}</ion-button>
-      </ion-col>
-    </ion-row>
-
   </ion-grid>
+
+  <div class="btnAnswers">
+    <ion-button class="bChoice" color="primary" expand="full" [disabled]="isDisabled" (click)="checkAnswer(0)">{{choices[0].answer}}</ion-button>
+    <ion-button class="bChoice" color="danger" expand="full" [disabled]="isDisabled" (click)="checkAnswer(1)">{{choices[1].answer}}</ion-button>
+    <ion-button class="bChoice" color="tertiary" expand="full" [disabled]="isDisabled" (click)="checkAnswer(2)">{{choices[2].answer}}</ion-button>
+    <ion-button class="bChoice" color="primary" expand="full" [disabled]="isDisabled" (click)="checkAnswer(3)">{{choices[3].answer}}</ion-button>
+  </div>
+
 </ion-content>
 
 <ion-footer>
-	<ion-toolbar>
-    <ion-button expand="block" fill="clear" *ngIf="!isDisabled" (click)="goBack()">Menu</ion-button>
-		<ion-button expand="block" fill="clear" *ngIf="isDisabled" (click)="chooseQuestion()">Suivant</ion-button>
+	<ion-toolbar color="danger">
+    <ion-button class="bottom" expand="block" fill="clear" *ngIf="!isDisabled" (click)="goBack()">Menu</ion-button>
+		<ion-button class="bottom" expand="block" fill="clear" *ngIf="isDisabled" (click)="chooseQuestion()">Suivant</ion-button>
 	</ion-toolbar>
 </ion-footer>
