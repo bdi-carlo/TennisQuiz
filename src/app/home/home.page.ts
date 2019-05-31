@@ -18,13 +18,15 @@ export class HomePage implements OnInit {
   constructor(private http: HttpClient, private navCtrl: NavController){}
 
   ngOnInit(){
-    console.log("ngOnInit()");
+    //console.log("home -> ngOnInit()");
   }
 
-  ngOnDestroy(){}
+  ngOnDestroy(){
+    //console.log("home -> ngOnDestroy()");
+  }
 
   ionViewWillEnter(){
-    console.log("ionViewWillEnter()");
+    //console.log("home -> ionViewWillEnter()");
     // Take datas from static file assets/data/question.json
     if(window.localStorage.getItem("datas") == undefined){
       window.localStorage.setItem("perc", "0");
@@ -38,10 +40,10 @@ export class HomePage implements OnInit {
         window.localStorage.setItem("datas", JSON.stringify(data));
         window.setTimeout(() => {},1);
       });
-    }else{
-      this.goodDone = JSON.parse(window.localStorage.getItem("goodDone"));
-      this.perc = parseInt(window.localStorage.getItem("perc"));
     }
+    
+    this.goodDone = JSON.parse(window.localStorage.getItem("goodDone"));
+    this.perc = parseInt(window.localStorage.getItem("perc"));
   }
 
   openQuestion(){

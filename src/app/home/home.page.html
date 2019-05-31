@@ -7,10 +7,19 @@
 </ion-header>
 
 <ion-content padding color="dark">
-  <p>{{goodDone.good}}/{{goodDone.done}} bonnes  réponses</p>
-  <p>{{perc}} % terminé</p>
-  <ion-progress-bar color="tertiary" value="{{perc/100}}"></ion-progress-bar>
-  <ion-button color="danger" expand="full" (click)="openQuestion()">JOUER</ion-button>
-  <ion-button color="tertiary" expand="full" (click)="openAjout()">AJOUTER QUESTION</ion-button>
-  <ion-button color="danger" expand="full" (click)="reset()">RESET</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-label class="pGoodDone">{{goodDone.good}} / {{goodDone.done}}</ion-label>
+    </ion-row>
+
+    <ion-row>
+      <ion-label class="textPerc">{{perc}} % terminé</ion-label>
+      <ion-progress-bar color="tertiary" value="{{perc/100}}"></ion-progress-bar>
+    </ion-row>
+  </ion-grid>
+
+  <div class="dButton">
+    <ion-button class="bChoice" color="danger" expand="full" (click)="openQuestion()">JOUER</ion-button>
+    <ion-button class="bChoice" color="tertiary" expand="full" (click)="reset()">RESET</ion-button>
+  </div>
 </ion-content>

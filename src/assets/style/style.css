@@ -2,10 +2,26 @@
   height: 50px;
 }
 
-.lCorrect{
+.lRepondre{
   margin-top: 10px;
   margin: auto;
   font-size: 20px;
+}
+
+.lFaux{
+  margin-top: 10px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e22424;
+}
+
+.lVrai{
+  margin-top: 10px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #43ce2b;
 }
 
 .bNext{
@@ -16,7 +32,7 @@
 .lEntitled{
   margin: auto;
   margin-top: 30px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .rowChoice1{
@@ -31,10 +47,33 @@
 
 }
 
+.pGoodDone{
+  margin: auto;
+  top: 20px;
+  font-size: 30px;
+}
+
+.textPerc{
+  margin: auto;
+  margin-top: 40px;
+}
+
 .btnAnswers{
   position: absolute;
   bottom: 2px;
   width: 100%;
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.dButton{
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

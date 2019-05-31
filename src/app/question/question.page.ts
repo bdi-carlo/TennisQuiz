@@ -28,9 +28,7 @@ export class QuestionPage implements OnInit {
 
   // Save datas when leaving the page
   ngOnDestroy(){
-    this.myStorage.setItem("datas", JSON.stringify(this.datasJson));
-    this.myStorage.setItem("perc", Math.round((this.goodDone.done/this.datasJson.quiz.questions.length)*100).toString());
-    this.myStorage.setItem("goodDone", JSON.stringify(this.goodDone));
+    //console.log("question -> ngOnDestroy()");
   }
 
   /**
@@ -82,6 +80,10 @@ export class QuestionPage implements OnInit {
     this.goodDone.done++;
     this.checkGameFinished();
     this.isDisabled = true;
+
+    this.myStorage.setItem("datas", JSON.stringify(this.datasJson));
+    this.myStorage.setItem("perc", Math.round((this.goodDone.done/this.datasJson.quiz.questions.length)*100).toString());
+    this.myStorage.setItem("goodDone", JSON.stringify(this.goodDone));
   }
 
   checkGameFinished(){

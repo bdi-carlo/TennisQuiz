@@ -9,7 +9,7 @@
 
   <ion-grid class="grid1">
     <ion-row>
-      <ion-label class="lCorrect">{{isCorrect}}</ion-label>
+      <ion-label [ngClass]="{'lRepondre' : (isCorrect == 'REPONDRE'), 'lFaux' : (isCorrect == 'FAUX'), 'lVrai' : (isCorrect == 'VRAI')}">{{isCorrect}}</ion-label>
     </ion-row>
 
     <ion-row>
@@ -27,7 +27,7 @@
 </ion-content>
 
 <ion-footer>
-	<ion-toolbar color="danger">
+	<ion-toolbar color="light">
     <ion-button class="bottom" expand="block" fill="clear" *ngIf="!isDisabled" (click)="goBack()">Menu</ion-button>
 		<ion-button class="bottom" expand="block" fill="clear" *ngIf="isDisabled" (click)="chooseQuestion()">Suivant</ion-button>
 	</ion-toolbar>
