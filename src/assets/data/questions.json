@@ -153,6 +153,94 @@
 				],
 				"good": 0,
 				"done": -1
+			},
+			{
+				"question": "Combien de fois Borg et McEnroe se sont rencontrés sur le circuit ATP ?",
+				"choix":[
+					{"answer": "10"},
+					{"answer": "14"},
+					{"answer": "16"},
+					{"answer": "20"}
+				],
+				"good": 1,
+				"done": -1
+			},
+			{
+				"question": "US Open 1984 finale, contre qui McEnroe gagne-t-il 6/3 6/4 6/1 ?",
+				"choix":[
+					{"answer": "Ivan Lendle"},
+					{"answer": "Jimmy Connors"},
+					{"answer": "Björn Borg"},
+					{"answer": "Chris Lewis"}
+				],
+				"good": 0,
+				"done": -1
+			},
+			{
+				"question": "Sur quel score McEnroe perd-t-il en finale de Roland Garros 1984 contre Lendle ?",
+				"choix":[
+					{"answer": "6/2 4/6 5/7 5/7"},
+					{"answer": "4/6 5/7 5/7"},
+					{"answer": "6/3 6/2 4/6 5/7 5/7"},
+					{"answer": "6/3 6/2 4/6 5/7 10/12"}
+				],
+				"good": 2,
+				"done": -1
+			},
+			{
+				"question": "Combien de Grand Chelems McEnroe a-t-il remporté en double ?",
+				"choix":[
+					{"answer": "3"},
+					{"answer": "6"},
+					{"answer": "9"},
+					{"answer": "12"}
+				],
+				"good": 2,
+				"done": -1
+			},
+			{
+				"question": "Wimbledon est le plus vieux tournoi de tennis au monde, en quelle année a-t-il était créé ?",
+				"choix":[
+					{"answer": "1872"},
+					{"answer": "1877"},
+					{"answer": "1884"},
+					{"answer": "1892"}
+				],
+				"good": 1,
+				"done": -1
+			},
+			{
+				"question": "21 est le nombre de matchs remportés d'affilée sur une année en Grand Chelem, qui a ce record ?",
+				"choix":[
+					{"answer": "Pete Sampras"},
+					{"answer": "Novak Djokovic"},
+					{"answer": "Roger Federer"},
+					{"answer": "Rafel Nadal"}
+				],
+				"good": 0,
+				"done": -1
+			},
+			{
+				"question": "En quelle année Roger Feder a-t-il enfin remporté Roland Garros ?",
+				"choix":[
+					{"answer": "2015"},
+					{"answer": "2007"},
+					{"answer": "2012"},
+					{"answer": "2009"}
+				],
+				"good": 3,
+				"done": -1
+			},
+			{
+				"question": "Quelle est le service le plus rapide enregistré (par Sam Groth) ?",
+				"choix":[
+					{"answer": "245 km/h"},
+					{"answer": "263 km/h"},
+					{"answer": "270 km/h"},
+					{"answer": "251 km/h"}
+				],
+				"good": 1,
+				"done": -1
 			}
 		],
 		"finished": -1
