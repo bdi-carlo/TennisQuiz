@@ -19,6 +19,12 @@ export class HomePage implements OnInit {
 
   ngOnInit(){
     console.log("ngOnInit()");
+  }
+
+  ngOnDestroy(){}
+
+  ionViewWillEnter(){
+    console.log("ionViewWillEnter()");
     // Take datas from static file assets/data/question.json
     if(window.localStorage.getItem("datas") == undefined){
       window.localStorage.setItem("perc", "0");
@@ -36,14 +42,6 @@ export class HomePage implements OnInit {
       this.goodDone = JSON.parse(window.localStorage.getItem("goodDone"));
       this.perc = parseInt(window.localStorage.getItem("perc"));
     }
-  }
-
-  ngOnDestroy(){}
-
-  ionViewWillEnter(){
-    console.log("ionViewWillEnter()");
-    this.goodDone = JSON.parse(window.localStorage.getItem("goodDone"));
-    this.perc = parseInt(window.localStorage.getItem("perc"));
   }
 
   openQuestion(){
