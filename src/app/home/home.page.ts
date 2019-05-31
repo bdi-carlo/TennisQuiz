@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
         window.setTimeout(() => {},1);
       });
     }
-    
+
     this.goodDone = JSON.parse(window.localStorage.getItem("goodDone"));
     this.perc = parseInt(window.localStorage.getItem("perc"));
   }
@@ -50,8 +50,8 @@ export class HomePage implements OnInit {
     this.navCtrl.navigateForward('/question');
   }
 
-  openAjout(){
-    this.navCtrl.navigateForward('/ajout');
+  openVersus(){
+    this.navCtrl.navigateForward('/versus');
   }
 
   reset(){

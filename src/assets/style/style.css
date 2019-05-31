@@ -1,61 +1,11 @@
+/*** BUTTONS ***/
 .bChoice{
   height: 50px;
-}
-
-.lRepondre{
-  margin-top: 10px;
-  margin: auto;
-  font-size: 20px;
-}
-
-.lFaux{
-  margin-top: 10px;
-  margin: auto;
-  font-size: 20px;
-  font-weight: bold;
-  color: #e22424;
-}
-
-.lVrai{
-  margin-top: 10px;
-  margin: auto;
-  font-size: 20px;
-  font-weight: bold;
-  color: #43ce2b;
 }
 
 .bNext{
   display: inline-block;
   text-align: center;
-}
-
-.lEntitled{
-  margin: auto;
-  margin-top: 30px;
-  font-size: 25px;
-}
-
-.rowChoice1{
-  margin-top: 40px;
-}
-
-.bottom{
-  color: white;
-}
-
-.grid1{
-
-}
-
-.pGoodDone{
-  margin: auto;
-  top: 20px;
-  font-size: 30px;
-}
-
-.textPerc{
-  margin: auto;
-  margin-top: 40px;
 }
 
 .btnAnswers{
@@ -76,4 +26,78 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/*** INPUTS ***/
+
+.iChoice{
+  height: 50px;
+  text-align: center;
+  border-style: solid;
+  margin-bottom: 4px;
+}
+
+/*** LAYOUTS ***/
+.lRepondre{
+  margin-top: 10px;
+  margin: auto;
+  font-size: 20px;
+}
+
+.lFaux{
+  top: 20px;
+  margin-top: 10px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e22424;
+}
+
+.lVrai{
+  top: 20px;
+  margin-top: 10px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #43ce2b;
+}
+
+.lEntitled{
+  margin: auto;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.pGoodDone{
+  margin: auto;
+  top: 20px;
+  font-size: 30px;
+}
+
+.textPerc{
+  margin: auto;
+  margin-top: 40px;
+}
+
+/*** IMAGES ***/
+.iThinking{
+  width: auto;
+  height: 200px;
+  margin-top: 20px;
+}
+
+/*** OTHERS ***/
+.sChoices{
+  margin: auto;
+  margin-top: 30px;
+  font-size: 25px;
+  border-style: solid;
+}
+
+.rowChoice1{
+  margin-top: 40px;
+}
+
+.bottom{
+  color: white;
 }

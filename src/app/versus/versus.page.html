@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>TennisQuiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+  <ion-grid class="grid1">
+    <ion-row>
+      <ion-label [ngClass]="{'lRepondre' : (isCorrect == 'PREPARATION' || isCorrect == 'JOUER'), 'lFaux' : (isCorrect == 'FAUX'), 'lVrai' : (isCorrect == 'VRAI')}">{{isCorrect}}</ion-label>
+    </ion-row>
+
+    <ion-row>
+      <ion-label *ngIf="isInPreparation" class="lEntitled">Choisir la bonne réponse</ion-label>
+      <ion-img class="iThinking" *ngIf="!isInPreparation && !isDisabled" src="../../assets/images/thinking.png"></ion-img>
+      <ion-label *ngIf="isDisabled && isCorrect == 'FAUX'" class="lEntitled">La bonne réponse était</ion-label>
+      <ion-label *ngIf="isDisabled && isCorrect == 'VRAI'" class="lEntitled">Bien joué !!</ion-label>
+    </ion-row>
+
+    <ion-row>
+      <ion-select color="light" *ngIf="isInPreparation" [(ngModel)]="good" class="sChoices" interface="popover" okText="Ok" cancelText="Annuler">
+        <ion-select-option value=1>1</ion-select-option>
+        <ion-select-option value=2>2</ion-select-option>
+        <ion-select-option value=3>3</ion-select-option>
+        <ion-select-option value=4>4</ion-select-option>
+      </ion-select>
+      <ion-label *ngIf="isDisabled && isCorrect == 'FAUX'" class="lEntitled">{{goodResponse}}</ion-label>
+    </ion-row>
+
+    <ion-row>
+      <ion-label *ngIf="isInPreparation" class="lEntitled">Ecrire les réponses possibles</ion-label>
+    </ion-row>
+  </ion-grid>
+
+  <div class="btnAnswers">
+    <ion-input class="iChoice" *ngIf="isInPreparation" [(ngModel)]="choices[0]" placeholder="Réponse 1"></ion-input>
+    <ion-input class="iChoice" *ngIf="isInPreparation" color="danger" [(ngModel)]="choices[1]" placeholder="Réponse 2"></ion-input>
+    <ion-input class="iChoice" *ngIf="isInPreparation" color="tertiary" [(ngModel)]="choices[2]" placeholder="Réponse 3"></ion-input>
+    <ion-input class="iChoice" *ngIf="isInPreparation" [(ngModel)]="choices[3]" placeholder="Réponse 4"></ion-input>
+
+    <ion-button *ngIf="!isInPreparation" class="bChoice" color="primary" expand="full" [disabled]="isDisabled" (click)="checkAnswer(0)">{{choices[0]}}</ion-button>
+    <ion-button *ngIf="!isInPreparation" class="bChoice" color="danger" expand="full" [disabled]="isDisabled" (click)="checkAnswer(1)">{{choices[1]}}</ion-button>
+    <ion-button *ngIf="!isInPreparation" class="bChoice" color="tertiary" expand="full" [disabled]="isDisabled" (click)="checkAnswer(2)">{{choices[2]}}</ion-button>
+    <ion-button *ngIf="!isInPreparation" class="bChoice" color="primary" expand="full" [disabled]="isDisabled" (click)="checkAnswer(3)">{{choices[3]}}</ion-button>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+	<ion-toolbar color="light">
+		<ion-button class="bottom" expand="block" fill="clear" *ngIf="isInPreparation" (click)="inputToQuestion()">GO</ion-button>
+    <ion-button class="bottom" expand="block" fill="clear" *ngIf="isDisabled" (click)="replay()">RECOMMENCER</ion-button>
+  </ion-toolbar>
+</ion-footer>
