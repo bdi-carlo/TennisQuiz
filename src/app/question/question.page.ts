@@ -86,6 +86,9 @@ export class QuestionPage implements OnInit {
     this.myStorage.setItem("goodDone", JSON.stringify(this.goodDone));
   }
 
+  /**
+   * Check if the player answered to all the questions
+  **/
   checkGameFinished(){
     var isFinished = true;
     for(let qst of this.datasJson.quiz.questions){
